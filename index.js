@@ -12,8 +12,10 @@ async function scraper(url) {
     imageSrc: img.getAttribute('src'),
     imageAlt: img.getAttribute('alt'),
     imageWidth: img.naturalWidth,
-    imageHeight: img.naturalHeight
+    imageHeight: img.naturalHeight,
+    ratio: Math.round((img.naturalWidth/img.naturalHeight * 100))/ 100,
   })));
+
   console.log(images)
   // close chromiun
   await browser.close()
