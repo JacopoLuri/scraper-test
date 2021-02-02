@@ -14,7 +14,7 @@ async function scraper(url) {
     const imgsUrl = await page.$$eval('img', imgs => imgs.map(img => img.getAttribute('src')));
     const imgsAlt = await page.$$eval('img', imgs => imgs.map(img => img.getAttribute('alt')));
  
-    // creating the onj for the FE
+    // creating the obj for the FE
     const imgObj = imgsUrl.map((img, index) => ({imageSrc: img, imageAlt: imgsAlt[index]}))
 
     // close chromiun
